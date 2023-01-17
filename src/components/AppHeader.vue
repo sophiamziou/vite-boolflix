@@ -2,6 +2,14 @@
 export default {};
 </script>
 <template lang="">
-  <div></div>
+  <h1>Ciao</h1>
 </template>
-<style lang=""></style>
+<style lang="scss">
+h1 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+</style>

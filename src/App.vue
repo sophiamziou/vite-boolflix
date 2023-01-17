@@ -1,5 +1,6 @@
 <script>
-import { store } from "../store";
+import axios from "axios";
+import { store } from "./store";
 import AppHeader from "./components/AppHeader.vue";
 
 export default {
@@ -18,4 +19,6 @@ export default {
   <AppHeader></AppHeader>
 </template>
 
-<style scoped></style>
+<style lang="scss">
+@use "./styles/generals.scss" as *;
+</style>

@@ -24,7 +24,17 @@ export default {
       axios.get(myUrl).then((response) => {
         store.moviesList = response.data.results;
       });
+      let myUrlTv = `${store.urltv}&query=${store.selectedMovie}`;
+      axios.get(myUrlTv).then((response) => {
+        store.tvList = response.data.results;
+      });
     },
+    // getTv() {
+    //   let myUrlTv = `${store.urltv}&query=${store.selectedMovie}`;
+    //   axios.get(myUrlTv).then((response) => {
+    //     store.tvList = response.data.results;
+    //   });
+    // },
   },
 };
 </script>

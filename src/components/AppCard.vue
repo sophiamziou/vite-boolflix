@@ -6,6 +6,7 @@ export default {
 };
 </script>
 <template lang="">
+  <!-- card movie -->
   <div class="card">
     <h4>Titolo:"{{ movie.title }}"</h4>
     <h5>Titolo originale:"{{ movie.original_title }}"</h5>

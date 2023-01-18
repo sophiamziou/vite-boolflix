@@ -1,10 +1,12 @@
 <script lang="js">
 import AppCard from "./AppCard.vue";
+import AppCardTv from "./AppCardTv.vue";
 import { store } from "../store.js";
 
 export default {
   components: {
     AppCard,
+    AppCardTv
   },
   data() {
     return {
@@ -21,6 +23,11 @@ export default {
           v-for="(item, index) in store.moviesList"
           :key="index"
           :movie="item"
+        />
+        <AppCardTv
+          v-for="(item, index) in store.tvList"
+          :key="index"
+          :tv="item"
         />
       </div>
     </div>

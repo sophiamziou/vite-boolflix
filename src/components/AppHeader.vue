@@ -22,7 +22,7 @@ export default {
           class="form-control"
           placeholder="inserisci film"
           v-model="store.selectedMovie"
-          @keyup.enter="$emit('filter')"
+          @keyup="$emit('filter')"
         />
       </div>
     </div>

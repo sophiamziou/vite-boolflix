@@ -14,9 +14,6 @@ export default {
     AppHeader,
     AppMain,
   },
-  created() {
-    this.getMovies();
-  },
   methods: {
     getMovies() {
       let myUrl = `${store.url}&query=${store.selectedMovie}`;

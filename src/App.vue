@@ -14,6 +14,10 @@ export default {
     AppHeader,
     AppMain,
   },
+  // rimuovere dopo perché non serve e cancellare harry potter in selectedmovie
+  created() {
+    this.getMovies();
+  },
   methods: {
     getMovies() {
       let myUrl = `${store.url}&query=${store.selectedMovie}`;

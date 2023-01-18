@@ -10,16 +10,18 @@ export default {
 };
 </script>
 <template>
-  <header>
-    <div class="row">
-      <div class="col">
-        <h1>BOOLFLIX</h1>
+  <div class="container">
+    <div class="row d-flex align-items-center">
+      <div class="col-9">
+        <div>
+          <h1 class="m-0 text-danger">BOOLFLIX</h1>
+        </div>
       </div>
-      <div class="col">
+      <div class="col-3">
         <AppSearch></AppSearch>
       </div>
     </div>
-  </header>
+  </div>
 </template>
 <style lang="scss">
 header {

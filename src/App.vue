@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     getMovies() {
-      let myUrl = `${store.url}${store.selectedMovie}`;
+      let myUrl = `${store.url}&query=${store.selectedMovie}`;
       axios.get(myUrl).then((response) => {
         store.moviesList = response.data.results;
       });
@@ -30,7 +30,7 @@ export default {
 
 <template>
   <header>
-    <AppHeader></AppHeader>
+    <AppHeader @filter="getMovies"></AppHeader>
   </header>
   <main class="bg-secondary">
     <AppMain></AppMain>

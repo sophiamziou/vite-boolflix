@@ -1,11 +1,10 @@
 <script>
-import AppSearch from "./AppSearch.vue";
+import { store } from "../store";
 export default {
   data() {
-    return {};
-  },
-  components: {
-    AppSearch,
+    return {
+      store,
+    };
   },
 };
 </script>
@@ -18,7 +17,13 @@ export default {
         </div>
       </div>
       <div class="col-3">
-        <AppSearch></AppSearch>
+        <input
+          type="search"
+          class="form-control"
+          placeholder="inserisci film"
+          v-model="store.selectedMovie"
+          @keyup.enter="$emit('filter')"
+        />
       </div>
     </div>
   </div>

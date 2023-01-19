@@ -1,4 +1,4 @@
-<script>
+<script lang="js">
 import { store } from "../store";
 export default {
   data() {

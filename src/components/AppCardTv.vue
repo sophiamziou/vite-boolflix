@@ -3,22 +3,9 @@ export default {
   props: {
     tv: Object,
   },
-  computed: {
-    stars() {
-      let stars = [];
-      for (let i = 0; i < 5; i++) {
-        if (i < Math.round(this.tv.vote_average / 2)) {
-          stars.push(i);
-        }
-      }
-      return stars;
-    },
-    emptystars() {
-      let emptystars = [];
-      for (let i = 0; i < 5 - Math.round(this.tv.vote_average / 2); i++) {
-        emptystars.push(i);
-      }
-      return emptystars;
+  methods: {
+    calcStars() {
+      return Math.round(this.tv.vote_average / 2);
     },
   },
 };
@@ -44,8 +31,8 @@ export default {
         </p>
         <p>
           voto:
-          <fa v-for="n in stars" :icon="['fas', 'star']" />
-          <fa v-for="n in emptystars" :icon="['far', 'star']" />
+          <fa v-for="n in calcStars()" :icon="['fas', 'star']" />
+          <fa v-for="n in 5 - calcStars()" :icon="['far', 'star']" />
         </p>
       </div>
     </div>

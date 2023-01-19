@@ -3,22 +3,9 @@ export default {
   props: {
     movie: Object,
   },
-  computed: {
-    stars() {
-      let stars = [];
-      for (let i = 0; i < 5; i++) {
-        if (i < Math.round(this.movie.vote_average / 2)) {
-          stars.push(i);
-        }
-      }
-      return stars;
-    },
-    emptystars() {
-      let emptystars = [];
-      for (let i = 0; i < 5 - Math.round(this.movie.vote_average / 2); i++) {
-        emptystars.push(i);
-      }
-      return emptystars;
+  methods: {
+    calcStars() {
+      return Math.round(this.movie.vote_average / 2);
     },
   },
 };
@@ -39,6 +26,8 @@ export default {
                 ? `https://www.countryflagicons.com/FLAT/64/GB.png`
                 : movie.original_language == 'ja'
                 ? `https://www.countryflagicons.com/FLAT/64/JP.png`
+                : movie.original_language == 'ko'
+                ? `https://www.countryflagicons.com/FLAT/64/KR.png`
                 : `https://www.countryflagicons.com/FLAT/64/${movie.original_language.toUpperCase()}.png`
             "
             :alt="movie.original_language"
@@ -48,8 +37,8 @@ export default {
         <p>
           voto:
           <!-- <span v-for="n in stars"> * </span> -->
-          <fa v-for="n in stars" :icon="['fas', 'star']" />
-          <fa v-for="n in emptystars" :icon="['far', 'star']" />
+          <fa v-for="n in calcStars()" :icon="['fas', 'star']" />
+          <fa v-for="n in 5 - calcStars()" :icon="['far', 'star']" />
         </p>
       </div>
     </div>

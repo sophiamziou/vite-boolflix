@@ -29,12 +29,6 @@ export default {
         store.tvList = response.data.results;
       });
     },
-    // getTv() {
-    //   let myUrlTv = `${store.urltv}&query=${store.selectedMovie}`;
-    //   axios.get(myUrlTv).then((response) => {
-    //     store.tvList = response.data.results;
-    //   });
-    // },
   },
 };
 </script>
@@ -43,7 +37,7 @@ export default {
   <header>
     <AppHeader @filter="getMovies"></AppHeader>
   </header>
-  <main class="bg-secondary">
+  <main class="bg-black">
     <AppMain></AppMain>
   </main>
 </template>

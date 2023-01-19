@@ -16,19 +16,29 @@ export default {
 };
 </script>
 <template lang="">
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col m-3">
-        <AppCard
-          v-for="(item, index) in store.moviesList"
-          :key="index"
-          :movie="item"
-        />
-        <AppCardTv
-          v-for="(item, index) in store.tvList"
-          :key="index"
-          :tv="item"
-        />
+      <div class="col">
+        <h2 class="subtitle">Lista Film</h2>
+        <div class="slider d-flex">
+          <AppCard
+            v-for="(item, index) in store.moviesList"
+            :key="index"
+            :movie="item"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h2 class="subtitle">Lista Serie</h2>
+        <div class="slider d-flex my-4">
+          <AppCardTv
+            v-for="(item, index) in store.tvList"
+            :key="index"
+            :tv="item"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -36,4 +46,11 @@ export default {
 <style lang="scss">
 @use "../styles/partials/variables" as *;
 @use "../styles/partials/mixins" as *;
+.slider {
+  overflow-x: scroll;
+}
+.subtitle {
+  margin: 20px;
+  color: rgb(188, 4, 4);
+}
 </style>

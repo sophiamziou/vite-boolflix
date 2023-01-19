@@ -35,6 +35,8 @@ export default {
             :src="
               tv.original_language == 'en'
                 ? `https://www.countryflagicons.com/FLAT/64/GB.png`
+                : tv.original_language == 'ja'
+                ? `https://www.countryflagicons.com/FLAT/64/JP.png`
                 : `https://www.countryflagicons.com/FLAT/64/${tv.original_language.toUpperCase()}.png`
             "
             :alt="tv.original_language"
